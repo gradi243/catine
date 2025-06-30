@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion - VAREX Sarl</title>
+    <title>Catégories - VAREX Sarl</title>
     <!-- Bootstrap CSS via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Bootstrap Icons via CDN -->
+    <!-- Bootstrap Icons via CDN (if needed, though not explicitly used in current nav) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Google Fonts: Inter for a clean, modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -82,12 +82,12 @@
         header {
             background-color: var(--color-secondary-black) !important;
             color: var(--color-light-white) !important;
-            padding: 60px 0;
+            padding: 60px 0; /* Slightly less padding for category page */
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.5rem; /* Slightly smaller heading for sub-pages */
             font-weight: 700;
             color: var(--color-primary-yellow) !important;
             margin-bottom: 10px;
@@ -109,67 +109,45 @@
             color: var(--color-primary-yellow) !important;
         }
 
-        /* Login Section Specifics */
-        .login-section {
-            background-color: var(--color-light-white);
-            padding: 50px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 1; /* Allows the section to take available space */
-        }
-        .login-card {
-            max-width: 400px;
-            width: 100%;
-            padding: 30px;
+        /* List Group Customization (Categories) */
+        .list-group {
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            background-color: #f8f9fa; /* Light grey background for the card */
-            text-align: center;
+            overflow: hidden; /* Ensures rounded corners apply to children */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
-        .login-card h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 30px;
+        .list-group-item {
+            background-color: var(--color-light-white);
             color: var(--color-dark-grey-text);
-        }
-        .login-card .form-control {
-            border-radius: 8px;
-            border: 1px solid #ced4da;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-        }
-        .login-card .form-control:focus {
-            border-color: var(--color-primary-yellow);
-            box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
-        }
-        .login-card .btn-primary {
-            width: 100%;
-            padding: 12px;
+            border: 1px solid #e0e0e0; /* Lighter border */
+            padding: 15px 20px;
             font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .list-group-item:hover {
+            background-color: #f8f8f8; /* Very light grey on hover */
+            color: var(--color-primary-yellow); /* Yellow text on hover */
+            border-color: var(--color-primary-yellow);
+        }
+        .list-group-item.active {
             background-color: var(--color-primary-yellow) !important;
             border-color: var(--color-primary-yellow) !important;
-            color: var(--color-secondary-black) !important;
-            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+            color: var(--color-secondary-black) !important; /* Black text on active yellow item */
+            font-weight: 700;
         }
-        .login-card .btn-primary:hover {
-            background-color: #e6c200 !important;
-            border-color: #e6c200 !important;
-            transform: translateY(-2px);
+        .list-group-item i {
+            font-size: 1.4em;
+            color: #6c757d; /* Default icon color */
+            transition: color 0.3s ease;
         }
-        .login-card .text-muted {
-            margin-top: 20px;
-            font-size: 0.9rem;
+        .list-group-item:hover i {
+            color: var(--color-primary-yellow); /* Yellow icon on hover */
         }
-        .login-card .text-muted a {
-            color: var(--color-primary-yellow);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .login-card .text-muted a:hover {
-            text-decoration: underline;
+        .list-group-item.active i {
+            color: var(--color-secondary-black) !important; /* Black icon on active yellow item */
         }
 
 
@@ -207,11 +185,9 @@
             header p {
                 font-size: 1rem;
             }
-            .login-card {
-                padding: 25px;
-            }
-            .login-card h2 {
-                font-size: 1.8rem;
+            .list-group-item {
+                padding: 12px 15px;
+                font-size: 1rem;
             }
         }
         @media (max-width: 576px) {
@@ -226,9 +202,6 @@
             }
             header .slogan {
                 font-size: 0.9rem;
-            }
-            .login-card {
-                margin: 0 15px; /* Add horizontal margin on very small screens */
             }
         }
     </style>
@@ -249,41 +222,39 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="categorie.html">Propriétés</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="categorie.html">Categorie</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="apropos.html">À Propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html">Connexion</a></li>
                 <li class="nav-item"><a class="nav-link" href="admin/index.html">Admin</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Connexion</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <header class="text-center py-5">
-    <h1>Connectez-vous à votre compte VAREX Sarl</h1>
+    <h1>Découvrez nos catégories de propriétés</h1>
     <p class="slogan">La valeur juste pour un avenir sûr</p>
-    <p>Accédez à votre espace personnel pour gérer vos propriétés et vos projets.</p>
+    <p>Explorez notre sélection de biens immobiliers et de terrains, soigneusement classés pour faciliter votre recherche.</p>
 </header>
 
-<section class="container my-5 login-section">
-    <div class="login-card">
-        <h2 class="text-primary">Connexion</h2>
-        <form action="#" method="POST">
-            <div class="mb-3">
-                <input type="email" class="form-control" id="email" placeholder="Adresse Email" required>
-            </div>
-            <div class="mb-3">
-                <input type="password" class="form-control" id="password" placeholder="Mot de passe" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Se connecter</button>
-        </form>
-        <p class="text-muted mt-3">
-            Pas encore de compte ? <a href="register.html">Inscrivez-vous ici</a>
-        </p>
-        <p class="text-muted">
-            <a href="forgot-password.html">Mot de passe oublié ?</a>
-        </p>
+<section class="container my-5">
+    <h2 class="text-center mb-4 text-primary">Types de Propriétés</h2>
+    <div class="list-group">
+        <a href="./articles.html?category=maisons" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Maisons <i class="bi bi-house-door-fill"></i>
+        </a>
+        <a href="./articles.html?category=appartements" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Appartements <i class="bi bi-building"></i>
+        </a>
+        <a href="./articles.html?category=locaux-commerciaux" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Locaux Commerciaux <i class="bi bi-shop"></i>
+        </a>
+        <a href="./articles.html?category=terrains" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            Terrains <i class="bi bi-map-fill"></i>
+        </a>
+        <!-- Vous pouvez ajouter d'autres catégories ici -->
     </div>
 </section>
 
