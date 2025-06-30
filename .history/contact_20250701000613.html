@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catégories - VAREX Sarl</title>
+    <title>Contact - VAREX Sarl</title>
     <!-- Bootstrap CSS via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Bootstrap Icons via CDN (if needed, though not explicitly used in current nav) -->
+    <!-- Bootstrap Icons via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Google Fonts: Inter for a clean, modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -82,12 +82,12 @@
         header {
             background-color: var(--color-secondary-black) !important;
             color: var(--color-light-white) !important;
-            padding: 60px 0; /* Slightly less padding for category page */
+            padding: 60px 0;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            font-size: 2.5rem; /* Slightly smaller heading for sub-pages */
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--color-primary-yellow) !important;
             margin-bottom: 10px;
@@ -109,56 +109,79 @@
             color: var(--color-primary-yellow) !important;
         }
 
-        /* Card Customization for Categories */
-        .card {
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Contact Section Specifics */
+        .contact-section {
             background-color: var(--color-light-white);
+            padding: 50px 0;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        .card-img-top {
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            height: 200px; /* Fixed height for images */
-            object-fit: cover;
-        }
-        .card-title {
-            color: var(--color-dark-grey-text);
+        .contact-section h2 {
+            font-size: 2rem;
             font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--color-dark-grey-text);
         }
-        .card-text {
-            color: #6c757d;
+        .contact-info .list-group-item {
+            background-color: transparent;
+            border: none;
+            padding-left: 0;
+            color: var(--color-dark-grey-text);
+            font-size: 1.1rem; /* Slightly larger text for readability */
+        }
+        .contact-info .list-group-item i {
+            color: var(--color-primary-yellow);
+            font-size: 1.4em; /* Larger icons */
+            width: 40px; /* Fixed width for icon alignment */
+            text-align: center;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+        .contact-info .list-group-item span {
+            flex-grow: 1; /* Allow text to take remaining space */
         }
 
-        /* Button Customization */
-        .btn-primary {
-            background-color: var(--color-primary-yellow) !important;
-            border-color: var(--color-primary-yellow) !important;
-            color: var(--color-secondary-black) !important;
-            font-weight: 600;
-            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+        .social-contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* Increased gap */
+            margin-top: 40px; /* More space above icons */
+            flex-wrap: wrap;
         }
-        .btn-primary:hover {
-            background-color: #e6c200 !important;
-            border-color: #e6c200 !important;
-            transform: translateY(-2px);
+        .social-contact-icons a {
+            color: var(--color-secondary-black);
+            font-size: 3rem; /* Even larger icons for prominence */
+            transition: color 0.3s ease, transform 0.2s ease;
+            text-decoration: none; /* Remove underline */
+            display: flex;
+            flex-direction: column; /* Stack icon and text vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center;
+            width: 80px; /* Adjust width to fit text */
+            height: 80px; /* Adjust height to fit text */
+            border-radius: 10px; /* More square-ish background for icons */
+            background-color: rgba(255, 215, 0, 0.1); /* Light yellow background */
+            padding: 10px; /* Padding inside the clickable area */
         }
-        .btn-outline-primary {
-            color: var(--color-primary-yellow) !important;
-            border-color: var(--color-primary-yellow) !important;
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        .social-contact-icons a i {
+            margin-bottom: 5px; /* Space between icon and text */
         }
-        .btn-outline-primary:hover {
-            background-color: var(--color-primary-yellow) !important;
-            color: var(--color-secondary-black) !important;
-            border-color: var(--color-primary-yellow) !important;
+        .social-contact-icons a span {
+            font-size: 0.8rem; /* Smaller font for the text label */
+            font-weight: 500;
+            color: var(--color-dark-grey-text); /* Text color for label */
+            text-align: center;
         }
+        .social-contact-icons a:hover {
+            color: var(--color-primary-yellow);
+            transform: translateY(-5px) scale(1.1); /* More pronounced hover effect */
+            background-color: var(--color-secondary-black); /* Black background on hover */
+        }
+        /* Specific hover colors for social icons */
+        .social-contact-icons .bi-whatsapp:hover { color: #25D366; }
+        .social-contact-icons .bi-facebook:hover { color: #1877F2; }
+        .social-contact-icons .bi-telegram:hover { color: #0088CC; }
+        .social-contact-icons .bi-envelope-fill:hover { color: #EA4335; }
+        .social-contact-icons .bi-linkedin:hover { color: #0A66C2; }
+        .social-contact-icons .bi-telephone-fill:hover { color: var(--color-primary-yellow); } /* Keep yellow for phone */
+
 
         /* Footer Customization */
         footer {
@@ -194,8 +217,22 @@
             header p {
                 font-size: 1rem;
             }
-            .card-img-top {
-                height: 180px;
+            .contact-section h2 {
+                font-size: 1.8rem;
+            }
+            .contact-section p {
+                font-size: 1rem;
+            }
+            .social-contact-icons {
+                gap: 15px;
+            }
+            .social-contact-icons a {
+                font-size: 2rem;
+                width: 70px; /* Adjusted width for smaller screens */
+                height: 70px; /* Adjusted height for smaller screens */
+            }
+            .social-contact-icons a span {
+                font-size: 0.7rem;
             }
         }
         @media (max-width: 576px) {
@@ -211,8 +248,16 @@
             header .slogan {
                 font-size: 0.9rem;
             }
-            .card-img-top {
-                height: 150px;
+            .social-contact-icons {
+                gap: 10px;
+            }
+            .social-contact-icons a {
+                font-size: 1.8rem;
+                width: 60px;
+                height: 60px;
+            }
+            .social-contact-icons a span {
+                font-size: 0.65rem;
             }
         }
     </style>
@@ -223,7 +268,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
             <div id="companyLogo">
-                <img src="img/logo.jpeg" alt="VAREX Sarl Logo">
+               <img src="img/logo.jpeg" alt="VAREX Sarl Logo">
             </div>
             <strong>VAREX Sarl</strong>
         </a>
@@ -233,11 +278,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="categorie.html">Categorie</a></li>
-                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="categorie.html">categorie</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="apropos.html">À Propos</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="admin/index.html">Admin</a></li>
                 <li class="nav-item"><a class="nav-link" href="login.html">Connexion</a></li>
             </ul>
         </div>
@@ -245,59 +290,63 @@
 </nav>
 
 <header class="text-center py-5">
-    <h1>Découvrez nos catégories de propriétés</h1>
+    <h1>Contactez VAREX Sarl</h1>
     <p class="slogan">La valeur juste pour un avenir sûr</p>
-    <p>Explorez notre sélection de biens immobiliers et de terrains, soigneusement classés pour faciliter votre recherche.</p>
+    <p>Nous sommes là pour répondre à toutes vos questions et vous accompagner dans vos projets immobiliers.</p>
 </header>
 
-<section class="container my-5">
-    <h2 class="text-center mb-4 text-primary">Types de Propriétés</h2>
-    <div class="row g-4 justify-content-center">
-        <!-- Catégorie: Maisons -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow">
-                <img src="https://images.prismic.io/travauxlib/0e9aa37c-8960-4ff0-8203-bd0a8bf3f068_prix-construction-maison-neuve.jpg?auto=compress,format&rect=0,0,1950,1200&w=1950&h=1200" class="card-img-top" alt="Maisons">
-                <div class="card-body">
-                    <h5 class="card-title">Maisons</h5>
-                    <p class="card-text">Découvrez une variété de maisons, des villas de luxe aux charmantes maisons familiales.</p>
-                    <a href="./articles.html?category=maisons" class="btn btn-outline-primary w-100">Explorer les maisons</a>
-                </div>
+<section class="container my-5 contact-section">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h2 class="text-center text-primary mb-4">Nos Coordonnées</h2>
+            <p class="text-center mb-5">
+                Pour toute question ou demande d'informations, n'hésitez pas à nous contacter directement.
+                Notre équipe est prête à vous fournir l'assistance dont vous avez besoin.
+            </p>
+
+            <ul class="list-group list-group-flush contact-info text-center">
+                <li class="list-group-item d-flex align-items-center justify-content-center">
+                    <i class="bi bi-geo-alt-fill me-3"></i>
+                    <span>Adresse : REPUBLIQUE DEMOCRATIQUE DU CONGO, PROVINCE DE NORD KIVU, VILLE DE BUTEMBO</span>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-center">
+                    <i class="bi bi-telephone-fill me-3"></i>
+                    <span>Téléphone : +243813920740</span>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-center">
+                    <i class="bi bi-envelope-fill me-3"></i>
+                    <span>Email : contact@varexsarl.com</span>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-center">
+                    <i class="bi bi-clock-fill me-3"></i>
+                    <span>Heures d'ouverture : Lun-Ven, 9h00 - 17h00</span>
+                </li>
+            </ul>
+
+            <h2 class="text-center text-primary mt-5 mb-3">Suivez-nous et contactez-nous via les réseaux sociaux</h2>
+            <div class="social-contact-icons">
+                <a href="https://wa.me/votre_numero_whatsapp" target="_blank" title="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://www.facebook.com/votre_page_facebook" target="_blank" title="Facebook">
+                    <i class="bi bi-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://t.me/votre_nom_utilisateur_telegram" target="_blank" title="Telegram">
+                    <i class="bi bi-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="mailto:contact@varexsarl.com" title="Gmail">
+                    <i class="bi bi-envelope-fill"></i>
+                    <span>Gmail</span>
+                </a>
+                <a href="https://www.linkedin.com/company/votre_entreprise" target="_blank" title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
             </div>
         </div>
-        <!-- Catégorie: Appartements -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow">
-                <img src="https://cdn.pap.fr/visuels/immoneuf/e3/7b/e37b31792008511983debee5528884de/e-i5.jpg" class="card-img-top" alt="Appartements">
-                <div class="card-body">
-                    <h5 class="card-title">Appartements</h5>
-                    <p class="card-text">Trouvez l'appartement idéal en ville, du studio moderne au penthouse spacieux.</p>
-                    <a href="./articles.html?category=appartements" class="btn btn-outline-primary w-100">Explorer les appartements</a>
-                </div>
-            </div>
-        </div>
-        <!-- Catégorie: Locaux Commerciaux -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow">
-                <img src="https://www.interpro.fr/wp-content/uploads/2024/07/MedicalHouse-paray-1-400x457.jpg" class="card-img-top" alt="Locaux Commerciaux">
-                <div class="card-body">
-                    <h5 class="card-title">Locaux Commerciaux</h5>
-                    <p class="card-text">Des espaces professionnels adaptés à toutes les activités, du bureau au magasin.</p>
-                    <a href="./articles.html?category=locaux-commerciaux" class="btn btn-outline-primary w-100">Explorer les locaux</a>
-                </div>
-            </div>
-        </div>
-        <!-- Catégorie: Terrains -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow">
-                <img src="https://media.gettyimages.com/id/sb10068181e-001/fr/photo/usa-south-carolina-grand-opening-sign.jpg?s=612x612&w=0&k=20&c=B4X53FSfFGGCP2nb1aT3AGZs9zSSjM9oUi4IVlapXYw=" class="card-img-top" alt="Terrains">
-                <div class="card-body">
-                    <h5 class="card-title">Terrains</h5>
-                    <p class="card-text">Trouvez le terrain idéal pour construire votre projet résidentiel ou commercial.</p>
-                    <a href="./articles.html?category=terrains" class="btn btn-outline-primary w-100">Explorer les terrains</a>
-                </div>
-            </div>
-        </div>
-        <!-- Vous pouvez ajouter d'autres catégories ici en suivant le même modèle -->
     </div>
 </section>
 
