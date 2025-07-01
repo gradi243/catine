@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Services - VAREX Sarl</title>
+    <title>Contact - VAREX Sarl</title>
     <!-- Bootstrap CSS via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Bootstrap Icons via CDN -->
@@ -109,91 +109,78 @@
             color: var(--color-primary-yellow) !important;
         }
 
-        /* Services Section Specifics */
-        .services-section {
+        /* Contact Section Specifics */
+        .contact-section {
             background-color: var(--color-light-white);
             padding: 50px 0;
         }
-        .services-section h2 {
+        .contact-section h2 {
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 30px;
             color: var(--color-dark-grey-text);
         }
-        .service-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: #f8f9fa; /* Light grey background for cards */
-            padding: 25px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Align content to the top */
-            height: 100%; /* Ensure cards have equal height */
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        .service-card i {
-            font-size: 3.5rem; /* Large icons */
-            color: var(--color-primary-yellow);
-            margin-bottom: 20px;
-        }
-        .service-card h5 {
+        .contact-info .list-group-item {
+            background-color: transparent;
+            border: none;
+            padding-left: 0;
             color: var(--color-dark-grey-text);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
+            font-size: 1.1rem; /* Slightly larger text for readability */
         }
-        .service-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #555;
-            flex-grow: 1; /* Allow description to take available space */
+        .contact-info .list-group-item i {
+            color: var(--color-primary-yellow);
+            font-size: 1.4em; /* Larger icons */
+            width: 40px; /* Fixed width for icon alignment */
+            text-align: center;
+            flex-shrink: 0; /* Prevent icon from shrinking */
         }
-        .service-card .btn-outline-primary {
-            margin-top: 20px;
-            width: auto;
-            padding: 8px 25px;
-            font-size: 0.95rem;
+        .contact-info .list-group-item span {
+            flex-grow: 1; /* Allow text to take remaining space */
         }
 
-        /* Call to Action Section */
-        .cta-section {
-            background-color: var(--color-secondary-black);
-            color: var(--color-light-white);
-            padding: 60px 0;
-            text-align: center;
-            margin-top: 50px;
+        .social-contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* Increased gap */
+            margin-top: 40px; /* More space above icons */
+            flex-wrap: wrap;
         }
-        .cta-section h2 {
-            color: var(--color-primary-yellow);
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        .cta-section p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-        }
-        .cta-section .btn-light {
-            background-color: var(--color-light-white);
-            border-color: var(--color-light-white);
+        .social-contact-icons a {
             color: var(--color-secondary-black);
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 3rem; /* Even larger icons for prominence */
+            transition: color 0.3s ease, transform 0.2s ease;
+            text-decoration: none; /* Remove underline */
+            display: flex;
+            flex-direction: column; /* Stack icon and text vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center;
+            width: 80px; /* Adjust width to fit text */
+            height: 80px; /* Adjust height to fit text */
+            border-radius: 10px; /* More square-ish background for icons */
+            background-color: rgba(255, 215, 0, 0.1); /* Light yellow background */
+            padding: 10px; /* Padding inside the clickable area */
         }
-        .cta-section .btn-light:hover {
-            background-color: #e0e0e0;
-            border-color: #e0e0e0;
-            transform: translateY(-2px);
+        .social-contact-icons a i {
+            margin-bottom: 5px; /* Space between icon and text */
         }
+        .social-contact-icons a span {
+            font-size: 0.8rem; /* Smaller font for the text label */
+            font-weight: 500;
+            color: var(--color-dark-grey-text); /* Text color for label */
+            text-align: center;
+        }
+        .social-contact-icons a:hover {
+            color: var(--color-primary-yellow);
+            transform: translateY(-5px) scale(1.1); /* More pronounced hover effect */
+            background-color: var(--color-secondary-black); /* Black background on hover */
+        }
+        /* Specific hover colors for social icons */
+        .social-contact-icons .bi-whatsapp:hover { color: #25D366; }
+        .social-contact-icons .bi-facebook:hover { color: #1877F2; }
+        .social-contact-icons .bi-telegram:hover { color: #0088CC; }
+        .social-contact-icons .bi-envelope-fill:hover { color: #EA4335; }
+        .social-contact-icons .bi-linkedin:hover { color: #0A66C2; }
+        .social-contact-icons .bi-telephone-fill:hover { color: var(--color-primary-yellow); } /* Keep yellow for phone */
 
 
         /* Footer Customization */
@@ -230,20 +217,22 @@
             header p {
                 font-size: 1rem;
             }
-            .services-section h2 {
+            .contact-section h2 {
                 font-size: 1.8rem;
             }
-            .service-card h5 {
-                font-size: 1.3rem;
-            }
-            .service-card p {
-                font-size: 0.9rem;
-            }
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-            .cta-section p {
+            .contact-section p {
                 font-size: 1rem;
+            }
+            .social-contact-icons {
+                gap: 15px;
+            }
+            .social-contact-icons a {
+                font-size: 2rem;
+                width: 70px; /* Adjusted width for smaller screens */
+                height: 70px; /* Adjusted height for smaller screens */
+            }
+            .social-contact-icons a span {
+                font-size: 0.7rem;
             }
         }
         @media (max-width: 576px) {
@@ -259,11 +248,16 @@
             header .slogan {
                 font-size: 0.9rem;
             }
-            .service-card {
-                padding: 20px;
+            .social-contact-icons {
+                gap: 10px;
             }
-            .service-card i {
-                font-size: 3rem;
+            .social-contact-icons a {
+                font-size: 1.8rem;
+                width: 60px;
+                height: 60px;
+            }
+            .social-contact-icons a span {
+                font-size: 0.65rem;
             }
         }
     </style>
@@ -285,9 +279,9 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="categorie.html">categorie</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="apropos.html">À Propos</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>                
                  <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
                 <li class="nav-item"><a class="nav-link" href="login.html">Connexion</a></li>
             </ul>
@@ -296,73 +290,64 @@
 </nav>
 
 <header class="text-center py-5">
-    <h1>Nos Services Complets</h1>
+    <h1>Contactez VAREX Sarl</h1>
     <p class="slogan">La valeur juste pour un avenir sûr</p>
-    <p>VAREX Sarl vous offre une gamme complète de services immobiliers pour tous vos besoins.</p>
+    <p>Nous sommes là pour répondre à toutes vos questions et vous accompagner dans vos projets immobiliers.</p>
 </header>
 
-<section class="container my-5 services-section">
-    <h2 class="text-center text-primary mb-5">Découvrez nos expertises</h2>
-    <div class="row g-4 justify-content-center">
-        <!-- Service: Expertise et Évaluation Immobilière -->
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-search"></i>
-                <h5>Expertise et Évaluation Immobilière</h5>
-                <p>Nos experts réalisent des évaluations précises et objectives de vos biens immobiliers, que ce soit pour une vente, un achat, une succession ou une garantie.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Demander une évaluation</a>
-            </div>
-        </div>
-        <!-- Service: Gestion de Biens -->
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-building"></i>
-                <h5>Gestion de Biens</h5>
-                <p>Confiez-nous la gestion complète de vos propriétés. De la recherche de locataires à l'entretien, nous maximisons vos revenus et minimisons vos soucis.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Gérer mon bien</a>
-            </div>
-        </div>
-        <!-- Service: Intermédiation Immobilière -->
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-currency-dollar"></i>
-                <h5>Intermédiation Immobilière</h5>
-                <p>Nous facilitons toutes vos transactions immobilières : achat, vente et location. Bénéficiez de notre réseau et de nos conseils pour des opérations réussies.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Trouver une propriété</a>
-            </div>
-        </div>
-        <!-- Vous pouvez ajouter d'autres services ici -->
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-tools"></i>
-                <h5>Conseil en Construction</h5>
-                <p>Accompagnement et conseils experts pour vos projets de construction, de la planification à la réalisation, en respectant les normes et votre budget.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Nous consulter</a>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-lightbulb"></i>
-                <h5>Études de Faisabilité</h5>
-                <p>Avant d'investir, nos études de faisabilité vous donnent une vision claire du potentiel et des risques de vos projets immobiliers.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">En savoir plus</a>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-graph-up"></i>
-                <h5>Analyse de Marché</h5>
-                <p>Obtenez des analyses approfondies du marché immobilier local pour prendre des décisions éclairées et optimiser vos investissements.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Voir les analyses</a>
+<section class="container my-5 contact-section">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h2 class="text-center text-primary mb-4">Nos Coordonnées</h2>
+            <p class="text-center mb-5">
+                Pour toute question ou demande d'informations, n'hésitez pas à nous contacter directement.
+                Notre équipe est prête à vous fournir l'assistance dont vous avez besoin.
+            </p>
+
+            <ul class="list-group list-group-flush contact-info text-center">
+                <li class="list-group-item d-flex align-items-center justify-content-center">
+                    <i class="bi bi-geo-alt-fill me-3"></i>
+                    <span>Adresse : REPUBLIQUE DEMOCRATIQUE DU CONGO, PROVINCE DE NORD KIVU, VILLE DE BUTEMBO,AV:REVOLUTION,</span>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-center">
+                    <i class="bi bi-telephone-fill me-3"></i>
+                    <span>Téléphone : +243813920740</span>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-center">
+                    <i class="bi bi-envelope-fill me-3"></i>
+                    <span>Email : contact@varexsarl.com</span>
+                </li>
+                <li class="list-group-item d-flex align-items-center justify-content-center">
+                    <i class="bi bi-clock-fill me-3"></i>
+                    <span>Heures d'ouverture : Lun-Ven, 9h00 - 17h00</span>
+                </li>
+            </ul>
+
+            <h2 class="text-center text-primary mt-5 mb-3">Suivez-nous et contactez-nous via les réseaux sociaux</h2>
+            <div class="social-contact-icons">
+                <a href="https://wa.me/votre_numero_whatsapp" target="_blank" title="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://www.facebook.com/votre_page_facebook" target="_blank" title="Facebook">
+                    <i class="bi bi-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://t.me/votre_nom_utilisateur_telegram" target="_blank" title="Telegram">
+                    <i class="bi bi-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="mailto:contact@varexsarl.com" title="Gmail">
+                    <i class="bi bi-envelope-fill"></i>
+                    <span>Gmail</span>
+                </a>
+                <a href="https://www.linkedin.com/company/votre_entreprise" target="_blank" title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
             </div>
         </div>
     </div>
-</section>
-
-<section class="cta-section">
-    <h2>Prêt à démarrer votre projet ?</h2>
-    <p>Contactez VAREX Sarl dès aujourd'hui pour discuter de vos besoins et obtenir une solution personnalisée.</p>
-    <a href="contact.html" class="btn btn-light">Contactez-nous</a>
 </section>
 
 <footer class="text-center text-white py-4 bg-dark mt-5">
@@ -373,7 +358,7 @@
         <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="Facebook" style="filter: invert(100%);"></a>
     </div>
     <p class="mt-3">&copy; 2025 VAREX Sarl - Tous droits réservés.</p>
-    <p>Développé par Grady_isaac ASPDEV</p>
+    <p>Développé par Grady_isaac </p>
 </footer>
 
 <!-- Bootstrap Bundle JS (includes Popper) -->
