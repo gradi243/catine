@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Services - VAREX Sarl</title>
+    <title>Tableau de Bord Admin - VAREX Sarl</title>
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Bootstrap Icons via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Google Fonts: Inter for a clean, modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom Styles -->
     <style>
         /* Define CSS Variables for the new color palette */
@@ -18,11 +18,12 @@
             --color-secondary-black: #000000; /* Black */
             --color-light-white: #FFFFFF; /* White */
             --color-dark-grey-text: #212529; /* Dark grey for general text */
+            --color-light-grey-bg: #f8f9fa; /* Light grey background for sections */
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--color-light-white);
+            background-color: var(--color-light-grey-bg); /* Light grey background */
             color: var(--color-dark-grey-text);
             display: flex;
             flex-direction: column;
@@ -44,8 +45,8 @@
             align-items: center;
         }
         .navbar-brand #companyLogo {
-            width: 70px;
-            height: 70px;
+            width: 90px;
+            height: 90px;
             margin-right: 10px;
             display: flex;
             justify-content: center;
@@ -109,92 +110,93 @@
             color: var(--color-primary-yellow) !important;
         }
 
-        /* Services Section Specifics */
-        .services-section {
-            background-color: var(--color-light-white);
+        /* Admin Dashboard Specifics */
+        .admin-dashboard-section {
             padding: 50px 0;
+            flex-grow: 1; /* Allows the section to take available space */
         }
-        .services-section h2 {
+        .admin-dashboard-section h2 {
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 30px;
             color: var(--color-dark-grey-text);
         }
-        .service-card {
-            border: 1px solid #e0e0e0;
+
+        /* Info Cards */
+        .info-card {
+            background-color: var(--color-light-white);
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: #f8f9fa; /* Light grey background for cards */
             padding: 25px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Align content to the top */
-            height: 100%; /* Ensure cards have equal height */
+            justify-content: center;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .service-card:hover {
+        .info-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-        .service-card i {
-            font-size: 3.5rem; /* Large icons */
+        .info-card .icon {
+            font-size: 3rem;
             color: var(--color-primary-yellow);
-            margin-bottom: 20px;
-        }
-        .service-card h5 {
-            color: var(--color-dark-grey-text);
-            font-size: 1.5rem;
-            font-weight: 600;
             margin-bottom: 15px;
         }
-        .service-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #555;
-            flex-grow: 1; /* Allow description to take available space */
+        .info-card .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-dark-grey-text);
+            line-height: 1;
         }
-        .service-card .btn-outline-primary {
-            margin-top: 20px;
-            width: auto;
-            padding: 8px 25px;
-            font-size: 0.95rem;
-        }
-
-        /* Call to Action Section */
-        .cta-section {
-            background-color: var(--color-secondary-black);
-            color: var(--color-light-white);
-            padding: 60px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .cta-section h2 {
-            color: var(--color-primary-yellow);
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        .cta-section p {
+        .info-card .label {
             font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-        }
-        .cta-section .btn-light {
-            background-color: var(--color-light-white);
-            border-color: var(--color-light-white);
-            color: var(--color-secondary-black);
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .cta-section .btn-light:hover {
-            background-color: #e0e0e0;
-            border-color: #e0e0e0;
-            transform: translateY(-2px);
+            color: #6c757d;
+            margin-top: 5px;
         }
 
+        /* Action Cards */
+        .action-card {
+            background-color: var(--color-light-white);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .action-card .icon {
+            font-size: 2.5rem;
+            color: var(--color-primary-yellow);
+            margin-bottom: 15px;
+        }
+        .action-card h5 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-dark-grey-text);
+            margin-bottom: 15px;
+        }
+        .action-card p {
+            font-size: 0.95rem;
+            color: #555;
+            flex-grow: 1;
+        }
+        .action-card .btn-outline-primary {
+            margin-top: 15px;
+            width: auto;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
 
         /* Footer Customization */
         footer {
@@ -230,20 +232,17 @@
             header p {
                 font-size: 1rem;
             }
-            .services-section h2 {
+            .admin-dashboard-section h2 {
                 font-size: 1.8rem;
             }
-            .service-card h5 {
-                font-size: 1.3rem;
+            .info-card .value {
+                font-size: 2rem;
             }
-            .service-card p {
-                font-size: 0.9rem;
-            }
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-            .cta-section p {
+            .info-card .label {
                 font-size: 1rem;
+            }
+            .action-card h5 {
+                font-size: 1.2rem;
             }
         }
         @media (max-width: 576px) {
@@ -259,11 +258,11 @@
             header .slogan {
                 font-size: 0.9rem;
             }
-            .service-card {
+            .info-card, .action-card {
                 padding: 20px;
             }
-            .service-card i {
-                font-size: 3rem;
+            .info-card .icon, .action-card .icon {
+                font-size: 2rem;
             }
         }
     </style>
@@ -284,85 +283,100 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="categorie.html">categorie</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="categorie.html">Propriétés</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="apropos.html">À Propos</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                 <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html">Connexion</a></li>
+                
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="admin_dashboard.html">Admin</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <header class="text-center py-5">
-    <h1>Nos Services Complets</h1>
-    <p class="slogan">La valeur juste pour un avenir sûr</p>
-    <p>VAREX Sarl vous offre une gamme complète de services immobiliers pour tous vos besoins.</p>
+    <h1>Tableau de Bord Administrateur</h1>
+    <p class="slogan">VAREX Sarl - Gestion centralisée de votre portail</p>
+    <p>Bienvenue, Administrateur. Gérez efficacement les opérations de VAREX Sarl.</p>
 </header>
 
-<section class="container my-5 services-section">
-    <h2 class="text-center text-primary mb-5">Découvrez nos expertises</h2>
-    <div class="row g-4 justify-content-center">
-        <!-- Service: Expertise et Évaluation Immobilière -->
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-search"></i>
-                <h5>Expertise et Évaluation Immobilière</h5>
-                <p>Nos experts réalisent des évaluations précises et objectives de vos biens immobiliers, que ce soit pour une vente, un achat, une succession ou une garantie.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Demander une évaluation</a>
+<section class="container my-5 admin-dashboard-section">
+    <h2 class="text-center text-primary mb-5">Vue d'ensemble</h2>
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="info-card">
+                <i class="bi bi-house-door icon"></i>
+                <div class="value">250</div>
+                <div class="label">Propriétés Actives</div>
             </div>
         </div>
-        <!-- Service: Gestion de Biens -->
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-building"></i>
-                <h5>Gestion de Biens</h5>
-                <p>Confiez-nous la gestion complète de vos propriétés. De la recherche de locataires à l'entretien, nous maximisons vos revenus et minimisons vos soucis.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Gérer mon bien</a>
+        <div class="col-md-4">
+            <div class="info-card">
+                <i class="bi bi-person-circle icon"></i>
+                <div class="value">1200</div>
+                <div class="label">Utilisateurs Enregistrés</div>
             </div>
         </div>
-        <!-- Service: Intermédiation Immobilière -->
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-currency-dollar"></i>
-                <h5>Intermédiation Immobilière</h5>
-                <p>Nous facilitons toutes vos transactions immobilières : achat, vente et location. Bénéficiez de notre réseau et de nos conseils pour des opérations réussies.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Trouver une propriété</a>
-            </div>
-        </div>
-        <!-- Vous pouvez ajouter d'autres services ici -->
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-tools"></i>
-                <h5>Conseil en Construction</h5>
-                <p>Accompagnement et conseils experts pour vos projets de construction, de la planification à la réalisation, en respectant les normes et votre budget.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Nous consulter</a>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-lightbulb"></i>
-                <h5>Études de Faisabilité</h5>
-                <p>Avant d'investir, nos études de faisabilité vous donnent une vision claire du potentiel et des risques de vos projets immobiliers.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">En savoir plus</a>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-            <div class="service-card">
-                <i class="bi bi-graph-up"></i>
-                <h5>Analyse de Marché</h5>
-                <p>Obtenez des analyses approfondies du marché immobilier local pour prendre des décisions éclairées et optimiser vos investissements.</p>
-                <a href="./contact.html" class="btn btn-outline-primary">Voir les analyses</a>
+        <div class="col-md-4">
+            <div class="info-card">
+                <i class="bi bi-bell icon"></i>
+                <div class="value">15</div>
+                <div class="label">Demandes en Attente</div>
             </div>
         </div>
     </div>
-</section>
 
-<section class="cta-section">
-    <h2>Prêt à démarrer votre projet ?</h2>
-    <p>Contactez VAREX Sarl dès aujourd'hui pour discuter de vos besoins et obtenir une solution personnalisée.</p>
-    <a href="contact.html" class="btn btn-light">Contactez-nous</a>
+    <h2 class="text-center text-primary mb-5">Actions Rapides</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="action-card">
+                <i class="bi bi-building-add icon"></i>
+                <h5>Gérer les Propriétés</h5>
+                <p>Ajoutez, modifiez ou supprimez des annonces immobilières.</p>
+                <a href="#" class="btn btn-outline-primary">Accéder</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="action-card">
+                <i class="bi bi-people icon"></i>
+                <h5>Gérer les Utilisateurs</h5>
+                <p>Visualisez et modifiez les profils des utilisateurs et des docteurs.</p>
+                <a href="#" class="btn btn-outline-primary">Accéder</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="action-card">
+                <i class="bi bi-calendar-check icon"></i>
+                <h5>Gérer les Rendez-vous</h5>
+                <p>Consultez, validez ou annulez les rendez-vous.</p>
+                <a href="#" class="btn btn-outline-primary">Accéder</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="action-card">
+                <i class="bi bi-file-earmark-bar-graph icon"></i>
+                <h5>Rapports & Statistiques</h5>
+                <p>Accédez aux données analytiques et aux rapports d'activité.</p>
+                <a href="#" class="btn btn-outline-primary">Accéder</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="action-card">
+                <i class="bi bi-gear icon"></i>
+                <h5>Paramètres du Site</h5>
+                <p>Configurez les options générales du portail.</p>
+                <a href="#" class="btn btn-outline-primary">Accéder</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="action-card">
+                <i class="bi bi-envelope icon"></i>
+                <h5>Messages & Support</h5>
+                <p>Répondez aux messages et gérez les demandes de support.</p>
+                <a href="#" class="btn btn-outline-primary">Accéder</a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer class="text-center text-white py-4 bg-dark mt-5">
